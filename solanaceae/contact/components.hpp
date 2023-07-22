@@ -8,6 +8,7 @@
 struct ContactModel3I;
 
 namespace Contact::Components {
+
 	struct TagSelfWeak {};
 	struct TagSelfStrong {};
 	struct TagBig {};
@@ -54,7 +55,7 @@ namespace Contact::Components {
 
 	// last seen (not disconnected?)
 
-};
+} // Contact::Components
 
 #include "./components_id.inl"
 
