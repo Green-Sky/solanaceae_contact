@@ -18,11 +18,12 @@ namespace Contact::Components {
 		Contact3 self;
 	};
 
-	// TODO: rename to SubOf?
-	struct BigParent {
+	// tier 1
+	struct Parent {
 		Contact3 parent;
 	};
 
+	// TODO: maybe rename to children
 	struct ParentOf {
 		std::vector<Contact3> subs;
 	};
