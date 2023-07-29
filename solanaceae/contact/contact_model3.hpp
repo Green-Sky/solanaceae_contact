@@ -23,5 +23,8 @@ struct ContactModel3I {
 
 	//virtual Contact3Handle toPersistent(void) = 0;
 	//virtual Contact3Handle toEphemeral(void) = 0;
+
+	// accept incoming request
+	virtual void acceptRequest(Contact3 c, std::string_view self_name, std::string_view password) { (void)c,(void)self_name,(void)password; }
 };
 

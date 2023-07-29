@@ -13,6 +13,12 @@ namespace Contact::Components {
 	struct TagSelfStrong {};
 	struct TagBig {};
 
+	struct RequestIncoming {
+		bool name = false;
+		bool password = false;
+	};
+	struct TagRequestOutgoing {};
+
 	// self counterpart
 	struct Self {
 		Contact3 self;

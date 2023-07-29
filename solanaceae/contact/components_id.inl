@@ -15,6 +15,8 @@ constexpr entt::id_type entt::type_hash<x>::value() noexcept { \
 DEFINE_COMP_ID(Contact::Components::TagSelfWeak)
 DEFINE_COMP_ID(Contact::Components::TagSelfStrong)
 DEFINE_COMP_ID(Contact::Components::TagBig)
+DEFINE_COMP_ID(Contact::Components::RequestIncoming)
+DEFINE_COMP_ID(Contact::Components::TagRequestOutgoing)
 DEFINE_COMP_ID(Contact::Components::Self)
 DEFINE_COMP_ID(Contact::Components::Parent)
 DEFINE_COMP_ID(Contact::Components::ParentOf)
