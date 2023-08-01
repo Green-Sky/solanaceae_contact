@@ -22,6 +22,8 @@ DEFINE_COMP_ID(Contact::Components::Parent)
 DEFINE_COMP_ID(Contact::Components::ParentOf)
 DEFINE_COMP_ID(Contact::Components::ContactModel)
 DEFINE_COMP_ID(Contact::Components::Name)
+DEFINE_COMP_ID(Contact::Components::AvatarMemory)
+DEFINE_COMP_ID(Contact::Components::AvatarFile)
 DEFINE_COMP_ID(Contact::Components::ConnectionState)
 DEFINE_COMP_ID(Contact::Components::StatusMessage)
 

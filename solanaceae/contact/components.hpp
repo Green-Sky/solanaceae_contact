@@ -3,6 +3,7 @@
 #include "./contact_model3.hpp"
 
 #include <string>
+#include <vector>
 
 // fwd
 struct ContactModel3I;
@@ -44,7 +45,17 @@ namespace Contact::Components {
 
 	// (display)alias
 
-	// avatar
+	struct AvatarMemory {
+		// RGBA
+		std::vector<uint8_t> data;
+		uint64_t width;
+		uint64_t height;
+	};
+
+	struct AvatarFile {
+		std::string file_path;
+	};
+
 	// status
 
 	struct ConnectionState {
