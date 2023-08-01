@@ -45,6 +45,9 @@ namespace Contact::Components {
 
 	// (display)alias
 
+	// tag to signify a avatar change, and the texture needs to be reloaded
+	struct TagAvatarInvalidate {};
+
 	struct AvatarMemory {
 		// RGBA
 		std::vector<uint8_t> data;
