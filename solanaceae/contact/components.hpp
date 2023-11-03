@@ -43,6 +43,14 @@ namespace Contact::Components {
 		std::string name;
 	};
 
+	// stable, probably unique, ID
+	// eg for tox this would be the public key of the contact
+	// if the protocol does not have its own ids, you can use a hash or a random byte array
+	// TODO: make more length specific variants?
+	struct ID {
+		std::vector<uint8_t> data;
+	};
+
 	// (display)alias
 
 	// tag to signal an avatar change, and the texture needs to be reloaded
