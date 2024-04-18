@@ -20,7 +20,10 @@ constexpr std::string_view entt::type_name<x>::value() noexcept { \
 
 DEFINE_COMP_ID(Contact::Components::TagSelfWeak)
 DEFINE_COMP_ID(Contact::Components::TagSelfStrong)
+DEFINE_COMP_ID(Contact::Components::TagRoot)
 DEFINE_COMP_ID(Contact::Components::TagBig)
+DEFINE_COMP_ID(Contact::Components::TagPrivate)
+DEFINE_COMP_ID(Contact::Components::TagGroup)
 DEFINE_COMP_ID(Contact::Components::RequestIncoming)
 DEFINE_COMP_ID(Contact::Components::TagRequestOutgoing)
 DEFINE_COMP_ID(Contact::Components::Self)
