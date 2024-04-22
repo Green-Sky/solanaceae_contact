@@ -36,7 +36,7 @@ DEFINE_COMP_ID(Contact::Components::TagAvatarInvalidate)
 DEFINE_COMP_ID(Contact::Components::AvatarMemory)
 DEFINE_COMP_ID(Contact::Components::AvatarFile)
 DEFINE_COMP_ID(Contact::Components::ConnectionState)
-DEFINE_COMP_ID(Contact::Components::StatusMessage)
+DEFINE_COMP_ID(Contact::Components::StatusText)
 
 #undef DEFINE_COMP_ID
 

@@ -14,7 +14,7 @@ namespace Contact::Components {
 	struct TagSelfStrong {};
 
 	// root node contact (like an account)
-	struct TagRoot {}; 
+	struct TagRoot {};
 	// hint to display this contact in the contact list
 	struct TagBig {};
 
@@ -88,9 +88,24 @@ namespace Contact::Components {
 		} state = disconnected;
 	};
 
-	// status message
-	struct StatusMessage {
-		std::string msg;
+	struct StatusText {
+		// aka status message
+		std::string text;
+
+		// how much of the beginning of the text is the first line
+		size_t first_line_length {0u};
+
+		void fillFirstLineLength(void) {
+			first_line_length = 0u;
+			// find end of line
+			for (const auto c : text) {
+				if (c == '\n' || c == '\0') {
+					break;
+				}
+
+				first_line_length++;
+			}
+		}
 	};
 
 	// last seen (not disconnected?)
