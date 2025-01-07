@@ -37,6 +37,9 @@ DEFINE_COMP_ID(Contact::Components::AvatarMemory)
 DEFINE_COMP_ID(Contact::Components::AvatarFile)
 DEFINE_COMP_ID(Contact::Components::ConnectionState)
 DEFINE_COMP_ID(Contact::Components::StatusText)
+DEFINE_COMP_ID(Contact::Components::FirstSeen)
+DEFINE_COMP_ID(Contact::Components::LastSeen)
+DEFINE_COMP_ID(Contact::Components::LastActivity)
 
 #undef DEFINE_COMP_ID
 

@@ -108,7 +108,21 @@ namespace Contact::Components {
 		}
 	};
 
-	// last seen (not disconnected?)
+	// the first time *we* have seen the contact
+	struct FirstSeen {
+		uint64_t ts {0};
+	};
+
+	struct LastSeen {
+		// update rate might vary, check connection state first
+		uint64_t ts {0};
+	};
+
+	struct LastActivity {
+		// message observed
+		// maybe status set
+		uint64_t ts {0};
+	};
 
 } // Contact::Components
 
