@@ -1,12 +1,10 @@
 #pragma once
 
-#include "./contact_model3.hpp"
+#include "./fwd.hpp"
 
+#include <cstdint>
 #include <string>
 #include <vector>
-
-// fwd
-struct ContactModel3I;
 
 namespace Contact::Components {
 
@@ -31,24 +29,24 @@ namespace Contact::Components {
 
 	// self counterpart
 	struct Self {
-		Contact3 self;
+		Contact4 self;
 	};
 
-	// tier 1
+	// tier 1 ?
 	struct Parent {
-		Contact3 parent;
+		Contact4 parent;
 	};
 
 	// TODO: maybe rename to children
 	// subs are not exclusive (only is some protocols)
 	// this is not an indicator of a groupchat
 	struct ParentOf {
-		std::vector<Contact3> subs;
+		std::vector<Contact4> subs;
 	};
 
 	// TODO: this is very hacky
 	// maybe refwrapper?
-	using ContactModel = ContactModel3I*;
+	using ContactModel = ContactModel4I*;
 
 	struct Name {
 		std::string name;
@@ -123,6 +121,32 @@ namespace Contact::Components {
 		// maybe status set
 		uint64_t ts {0};
 	};
+
+	// capabilities, supported by the protocol
+	// usually not persistent
+	namespace Caps {
+		// usually supported, but can mean different things
+		// eg tox ngc means destorying your group creds
+		struct TagDeletable {};
+
+		// can disconnect/reconnect without deleting
+		struct TagConnectable {};
+
+		// TODO: some acl thingy
+
+		// message model?
+		struct TagSendMessage {};
+		struct SendMessageSize { uint64_t max {0}; };
+
+		struct TagSetName {};
+
+		struct TagSetStatus {}; // none(avail)/away/busy ??
+
+		struct TagSetStatusText {};
+		struct StatusTextSize { uint64_t max {0}; };
+
+		struct TagSetStatusRich {}; // whatever that means; kvmap?
+	} // Caps
 
 } // Contact::Components
 

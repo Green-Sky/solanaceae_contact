@@ -41,5 +41,15 @@ DEFINE_COMP_ID(Contact::Components::FirstSeen)
 DEFINE_COMP_ID(Contact::Components::LastSeen)
 DEFINE_COMP_ID(Contact::Components::LastActivity)
 
+DEFINE_COMP_ID(Contact::Components::Caps::TagDeletable)
+DEFINE_COMP_ID(Contact::Components::Caps::TagConnectable)
+DEFINE_COMP_ID(Contact::Components::Caps::TagSendMessage)
+DEFINE_COMP_ID(Contact::Components::Caps::SendMessageSize)
+DEFINE_COMP_ID(Contact::Components::Caps::TagSetName)
+DEFINE_COMP_ID(Contact::Components::Caps::TagSetStatus)
+DEFINE_COMP_ID(Contact::Components::Caps::TagSetStatusText)
+DEFINE_COMP_ID(Contact::Components::Caps::StatusTextSize)
+DEFINE_COMP_ID(Contact::Components::Caps::TagSetStatusRich)
+
 #undef DEFINE_COMP_ID
 
