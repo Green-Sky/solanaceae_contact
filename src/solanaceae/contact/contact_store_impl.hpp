@@ -1,7 +1,6 @@
 #pragma once
 
 #include "./contact_store_i.hpp"
-#include "solanaceae/contact/fwd.hpp"
 
 #include <entt/entity/registry.hpp>
 
