@@ -2,9 +2,14 @@
 
 #include "./fwd.hpp"
 
+#include <entt/entity/entity.hpp>
+
 #include <cstdint>
 #include <string>
 #include <vector>
+
+// fwd
+enum class Object : uint32_t;
 
 namespace Contact::Components {
 
@@ -64,6 +69,11 @@ namespace Contact::Components {
 
 	// tag to signal an avatar change, and the texture needs to be reloaded
 	struct TagAvatarInvalidate {};
+
+	struct AvatarObj {
+		//ObjectHandle obj;
+		Object obj {entt::null};
+	};
 
 	struct AvatarMemory {
 		// RGBA single-frame
