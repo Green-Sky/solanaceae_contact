@@ -25,7 +25,7 @@ struct ContactStore4EventI {
 using ContactStore4EventProviderI = EventProviderI<ContactStore4EventI>;
 
 struct ContactStore4I : public ContactStore4EventProviderI{
-	static constexpr const char* version {"1"};
+	static constexpr const char* version {"2"};
 
 	virtual ContactRegistry4& registry(void) = 0;
 	virtual ContactHandle4 contactHandle(const Contact4 c) = 0;

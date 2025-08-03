@@ -27,5 +27,11 @@ struct ContactModel4I {
 	// delete
 	// triggers a destroy event on c
 	virtual bool leave(Contact4 c, std::string_view reason) = 0;
+
+	// invite c to to (as you speak it)
+	// eg on tox, only firends can be invited
+	virtual bool invite(Contact4 c, Contact4 to) = 0;
+	// might be called rapidly from ui code
+	virtual bool canInvite(Contact4 c, Contact4 to) = 0;
 };
 
