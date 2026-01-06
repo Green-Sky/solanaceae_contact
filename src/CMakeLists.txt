@@ -1,14 +1,14 @@
 project(solanaceae_contact C CXX)
 
 add_library(solanaceae_contact INTERFACE
-	./solanaceae/contact/fwd.hpp
+	#./solanaceae/contact/fwd.hpp
 
-	./solanaceae/contact/components.hpp
-	./solanaceae/contact/components_id.inl
-	./solanaceae/contact/contact_model4.hpp
+	#./solanaceae/contact/components.hpp
+	#./solanaceae/contact/components_id.inl
+	#./solanaceae/contact/contact_model4.hpp
 
-	./solanaceae/contact/contact_store_events.hpp
-	./solanaceae/contact/contact_store_i.hpp
+	#./solanaceae/contact/contact_store_events.hpp
+	#./solanaceae/contact/contact_store_i.hpp
 )
 
 target_include_directories(solanaceae_contact INTERFACE .)
