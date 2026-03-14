@@ -160,6 +160,7 @@ void registerComponents2Str(ContactStore4I& cs) {
 				case Contact::Components::ConnectionState::State::direct: return "direct";
 				case Contact::Components::ConnectionState::State::cloud: return "cloud";
 			}
+			std::abort();
 		},
 		"Status",
 		"ConnectionState",
