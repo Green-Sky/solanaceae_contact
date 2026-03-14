@@ -23,6 +23,10 @@ target_link_libraries(solanaceae_contact INTERFACE
 add_library(solanaceae_contact_impl
 	./solanaceae/contact/contact_store_impl.hpp
 	./solanaceae/contact/contact_store_impl.cpp
+
+	# TODO: own lib maybe?
+	./solanaceae/contact/components_to_string.hpp
+	./solanaceae/contact/components_to_string.cpp
 )
 
 target_include_directories(solanaceae_contact_impl PUBLIC .)
