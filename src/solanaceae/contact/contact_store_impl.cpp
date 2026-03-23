@@ -74,6 +74,67 @@ bool ContactStore4Impl::unregisterComponentToString(entt::id_type comp_type) {
 	return true;
 }
 
+
+bool ContactStore4Impl::registerImGuiChatTab(
+	entt::id_type comp_type,
+	imgui_chat_tab_fn fn
+) {
+	if (_imgui_chat_tab.contains(comp_type)) {
+		return false;
+	}
+
+	if (fn == nullptr) {
+		return false;
+	}
+
+	_imgui_chat_tab[comp_type] = ImGuiChatTabEntry{
+		fn,
+	};
+
+	return true;
+}
+
+bool ContactStore4Impl::unregisterImGuiChatTab(entt::id_type comp_type) {
+	if (!_imgui_chat_tab.contains(comp_type)) {
+		return false;
+	}
+
+	_imgui_chat_tab.erase(comp_type);
+
+	return true;
+}
+
+#if 0
+bool ContactStore4Impl::registerImGuiContext(
+	entt::id_type comp_type,
+	imgui_context_fn fn
+) {
+	if (_imgui_context.contains(comp_type)) {
+		return false;
+	}
+
+	if (fn == nullptr) {
+		return false;
+	}
+
+	_imgui_context[comp_type] = ImGuiContextEntry{
+		fn,
+	};
+
+	return true;
+}
+
+bool ContactStore4Impl::unregisterImGuiContext(entt::id_type comp_type) {
+	if (!_imgui_context.contains(comp_type)) {
+		return false;
+	}
+
+	_imgui_context.erase(comp_type);
+
+	return true;
+}
+#endif
+
 void ContactStore4Impl::throwEventConstruct(const Contact4 c) {
 	std::cout << "CS debug: event construct " << entt::to_integral(c) << "\n";
 	dispatch(
@@ -140,3 +201,45 @@ std::vector<ContactStore4Impl::C2SEntry> ContactStore4Impl::compsToString(Contac
 
 	return vec;
 }
+
+std::vector<ContactStore4Impl::IGCTEntry> ContactStore4Impl::getImGuiChatTab(ContactHandle4 c) {
+	if (!c) {
+		return {};
+	}
+
+	std::vector<ContactStore4Impl::IGCTEntry> vec;
+	for (const auto& si : c.storage()) {
+		const auto igct_it = _imgui_chat_tab.find(si.first);
+		if (igct_it == _imgui_chat_tab.cend()) {
+			continue;
+		}
+
+		vec.push_back({
+			igct_it->first,
+			igct_it->second.fn,
+		});
+	}
+	return vec;
+}
+
+#if 0
+std::vector<ContactStore4Impl::IGCEntry> ContactStore4Impl::getImGuiContext(ContactHandle4 c) {
+	if (!c) {
+		return {};
+	}
+
+	std::vector<ContactStore4Impl::IGCEntry> vec;
+	for (const auto& si : c.storage()) {
+		const auto igc_it = _imgui_context.find(si.first);
+		if (igc_it == _imgui_context.cend()) {
+			continue;
+		}
+
+		vec.push_back({
+			igc_it->first,
+			igc_it->second.fn,
+		});
+	}
+	return vec;
+}
+#endif
