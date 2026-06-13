@@ -31,13 +31,11 @@ struct ContactStore4Impl : public ContactStore4I {
 	) override;
 	bool unregisterImGuiChatTab(entt::id_type comp_type) override;
 
-#if 0
 	bool registerImGuiContext(
 		entt::id_type comp_type,
 		imgui_context_fn fn
 	) override;
 	bool unregisterImGuiContext(entt::id_type comp_type) override;
-#endif
 
 	void throwEventConstruct(const Contact4 c) override;
 	void throwEventUpdate(const Contact4 c) override;
@@ -61,13 +59,11 @@ struct ContactStore4Impl : public ContactStore4I {
 		};
 		std::vector<IGCTEntry> getImGuiChatTab(ContactHandle4 c);
 
-#if 0
 		struct IGCEntry {
 			entt::id_type id;
 			imgui_context_fn* fn;
 		};
 		std::vector<IGCEntry> getImGuiContext(ContactHandle4 c);
-#endif
 
 	private:
 		entt::basic_registry<Contact4> _reg;
@@ -86,11 +82,9 @@ struct ContactStore4Impl : public ContactStore4I {
 		};
 		entt::dense_map<entt::id_type, ImGuiChatTabEntry> _imgui_chat_tab;
 
-#if 0
 		struct ImGuiContextEntry {
 			imgui_context_fn* fn;
 		};
 		entt::dense_map<entt::id_type, ImGuiContextEntry> _imgui_context;
-#endif
 };
 

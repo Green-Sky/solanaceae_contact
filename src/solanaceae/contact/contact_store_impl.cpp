@@ -104,7 +104,6 @@ bool ContactStore4Impl::unregisterImGuiChatTab(entt::id_type comp_type) {
 	return true;
 }
 
-#if 0
 bool ContactStore4Impl::registerImGuiContext(
 	entt::id_type comp_type,
 	imgui_context_fn fn
@@ -133,7 +132,6 @@ bool ContactStore4Impl::unregisterImGuiContext(entt::id_type comp_type) {
 
 	return true;
 }
-#endif
 
 void ContactStore4Impl::throwEventConstruct(const Contact4 c) {
 	std::cout << "CS debug: event construct " << entt::to_integral(c) << "\n";
@@ -222,7 +220,6 @@ std::vector<ContactStore4Impl::IGCTEntry> ContactStore4Impl::getImGuiChatTab(Con
 	return vec;
 }
 
-#if 0
 std::vector<ContactStore4Impl::IGCEntry> ContactStore4Impl::getImGuiContext(ContactHandle4 c) {
 	if (!c) {
 		return {};
@@ -242,4 +239,3 @@ std::vector<ContactStore4Impl::IGCEntry> ContactStore4Impl::getImGuiContext(Cont
 	}
 	return vec;
 }
-#endif
