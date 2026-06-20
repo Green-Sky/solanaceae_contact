@@ -218,6 +218,44 @@ void registerComponents2Str(ContactStore4I& cs) {
 		false
 	);
 
+	cs.registerComponentToString(
+		entt::type_id<Contact::Components::Roles>().hash(),
+		+[](ContactHandle4 c, bool verbose) -> std::string {
+			std::string tmp;
+			for (const auto role : c.get<Contact::Components::Roles>().rs) {
+				if (tmp.empty()) {
+					tmp += std::to_string(role);
+				} else {
+					tmp += "," + std::to_string(role);
+				}
+			}
+			return tmp;
+		},
+		"ACL",
+		"Roles",
+		entt::type_id<Contact::Components::Roles>().name(),
+		false
+	);
+
+	cs.registerComponentToString(
+		entt::type_id<Contact::Components::RoleMap>().hash(),
+		+[](ContactHandle4 c, bool verbose) -> std::string {
+			std::string tmp;
+			for (const auto& [k,v] : c.get<Contact::Components::RoleMap>().map) {
+				if (tmp.empty()) {
+					tmp += std::to_string(k) + "=" + v;
+				} else {
+					tmp += "," + std::to_string(k) + "=" + v;
+				}
+			}
+			return tmp;
+		},
+		"ACL",
+		"RoleMap",
+		entt::type_id<Contact::Components::RoleMap>().name(),
+		false
+	);
+
 #undef regTag
 
 #define regCapTag(X) \

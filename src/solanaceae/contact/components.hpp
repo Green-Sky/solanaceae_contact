@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include <map>
 
 // fwd
 enum class Object : uint32_t;
@@ -130,6 +131,18 @@ namespace Contact::Components {
 		// message observed
 		// maybe status set
 		uint64_t ts {0};
+	};
+
+	// which roles a contact has
+	// aka ACL aka permissions aka moderators etc
+	struct Roles {
+		std::vector<uint64_t> rs;
+	};
+
+	// mapps the u64 id to a name
+	// usually on a group or root contact
+	struct RoleMap {
+		std::map<uint64_t, std::string> map;
 	};
 
 	// capabilities, supported by the protocol

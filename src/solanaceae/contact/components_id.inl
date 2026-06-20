@@ -41,6 +41,8 @@ DEFINE_COMP_ID(Contact::Components::StatusText)
 DEFINE_COMP_ID(Contact::Components::FirstSeen)
 DEFINE_COMP_ID(Contact::Components::LastSeen)
 DEFINE_COMP_ID(Contact::Components::LastActivity)
+DEFINE_COMP_ID(Contact::Components::Roles)
+DEFINE_COMP_ID(Contact::Components::RoleMap)
 
 DEFINE_COMP_ID(Contact::Components::Caps::TagDeletable)
 DEFINE_COMP_ID(Contact::Components::Caps::TagConnectable)
