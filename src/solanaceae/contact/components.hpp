@@ -33,6 +33,10 @@ namespace Contact::Components {
 	};
 	struct TagRequestOutgoing {};
 
+	struct Root {
+		Contact4 root;
+	};
+
 	// self counterpart
 	struct Self {
 		Contact4 self;

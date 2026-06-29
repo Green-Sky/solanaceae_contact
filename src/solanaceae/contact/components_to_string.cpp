@@ -47,6 +47,18 @@ void registerComponents2Str(ContactStore4I& cs) {
 	regTag(TagRequestOutgoing, "", true);
 
 	cs.registerComponentToString(
+		entt::type_id<Contact::Components::Root>().hash(),
+		+[](ContactHandle4 c, bool verbose) -> std::string {
+			const auto& comp = c.get<Contact::Components::Root>();
+			return std::to_string(entt::to_entity(comp.root));
+		},
+		"Hierarchy",
+		"Root",
+		entt::type_id<Contact::Components::Root>().name(),
+		false
+	);
+
+	cs.registerComponentToString(
 		entt::type_id<Contact::Components::Self>().hash(),
 		+[](ContactHandle4 c, bool verbose) -> std::string {
 			const auto& self_comp = c.get<Contact::Components::Self>();
@@ -64,7 +76,7 @@ void registerComponents2Str(ContactStore4I& cs) {
 			const auto& parent_comp = c.get<Contact::Components::Parent>();
 			return std::to_string(entt::to_entity(parent_comp.parent));
 		},
-		"", // general
+		"Hierarchy",
 		"Parent",
 		entt::type_id<Contact::Components::Parent>().name(),
 		true
@@ -80,7 +92,7 @@ void registerComponents2Str(ContactStore4I& cs) {
 			}
 			return str;
 		},
-		"", // general
+		"Hierarchy",
 		"ParentOf",
 		entt::type_id<Contact::Components::ParentOf>().name(),
 		true
